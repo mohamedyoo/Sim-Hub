@@ -114,8 +114,18 @@ function Kavo.CreateLib(kavName)
 	local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
 	local UIPadding_5 = Instance.new("UIPadding")
 
-	--Properties:
-	Kavo:DraggingEnabled(MainHeader, Main, SettingFrame)
+	--Properties:local blurFrame = Instance.new("Frame")
+
+	Kavo:DraggingEnabled(MainHeader, Main)
+	
+	blurFrame.Name = "blurFrame"
+	blurFrame.Parent = pages
+	blurFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	blurFrame.BackgroundTransparency = 1
+	blurFrame.BorderSizePixel = 0
+	blurFrame.Position = UDim2.new(-0.0222222228, 0, -0.0371747203, 0)
+	blurFrame.Size = UDim2.new(0, 376, 0, 289)
+	blurFrame.ZIndex = 999
 
 	ScriptHUb.Name = "ScriptHUb"
 	ScriptHUb.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -345,11 +355,8 @@ function Kavo.CreateLib(kavName)
 	Infotab.TextWrapped = true
 	Infotab.MouseButton1Click:Connect(function()
 		Infoframe.Visible = true
-		if Infoframe.Visible == true then
-			Infoframe.Visible = false
 		else
-			Infoframe.Visible = true
-		end
+Infoframe.Visible = false
 	end)
 	
 	ScriptHub.Name = "Script Hub"
