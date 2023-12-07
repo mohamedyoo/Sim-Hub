@@ -65,539 +65,521 @@ end
 function Kavo.CreateLib(kavName)
 	local selectedTab 
 	kavName = kavName or "Library"
-	local ScriptHUb = Instance.new("ScreenGui")
-	local Main = Instance.new("Frame")
-	local MainCorner = Instance.new("UICorner")
-	local MainHeader = Instance.new("Frame")
-	local headerCover = Instance.new("UICorner")
-	local coverup = Instance.new("Frame")
-	local Title = Instance.new("TextButton")
-	local UIPadding = Instance.new("UIPadding")
-	local MainSide = Instance.new("Frame")
-	local sideCorner = Instance.new("UICorner")
-	local coverup_2 = Instance.new("Frame")
-	local tabFrames = Instance.new("Frame")
-	local tabListing = Instance.new("UIListLayout")
-	local UIPadding_2 = Instance.new("UIPadding")
-	local pages = Instance.new("Frame")
-	local Pages = Instance.new("Folder")
-	local infoContainer = Instance.new("Frame")
-	local Close = Instance.new("ImageButton")
-	local UICorner = Instance.new("UICorner")
-	local ImageLabel = Instance.new("ImageLabel")
-	local UIScale = Instance.new("UIScale")
-	local Settings = Instance.new("ImageButton")
-	local Seperator = Instance.new("Frame")
-	local ImageButton = Instance.new("ImageButton")
-	local UIScale_2 = Instance.new("UIScale")
-	local SettingFrame = Instance.new("Frame")
-	local closeS = Instance.new("TextButton")
-	local UICorner_2 = Instance.new("UICorner")
-	local UIPadding_3 = Instance.new("UIPadding")
-	local TabS = Instance.new("Frame")
-	local TabSListLayout = Instance.new("UIListLayout")
-	local Infotab = Instance.new("TextButton")
-	local ScriptHub = Instance.new("TextButton")
-	local mainSFrame = Instance.new("Frame")
-	local Infoframe = Instance.new("Frame")
-	local AntiAFK = Instance.new("TextButton")
-	local Playername = Instance.new("TextButton")
-	local PlaceID = Instance.new("TextButton")
-	local GameName = Instance.new("TextButton")
-	local PlaceName = Instance.new("TextButton")
-	local ScriptHUb_2 = Instance.new("ScrollingFrame")
-	local ScriptListLayout = Instance.new("UIListLayout")
-	local Emptynesshub = Instance.new("TextButton")
-	local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-	local UIPadding_4 = Instance.new("UIPadding")
-	local Simhub = Instance.new("TextButton")
-	local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-	local UIPadding_5 = Instance.new("UIPadding")
+local ScriptHUb = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local MainCorner = Instance.new("UICorner")
+local MainHeader = Instance.new("Frame")
+local headerCover = Instance.new("UICorner")
+local coverup = Instance.new("Frame")
+local Title = Instance.new("TextButton")
+local UIPadding = Instance.new("UIPadding")
+local MainSide = Instance.new("Frame")
+local sideCorner = Instance.new("UICorner")
+local coverup_2 = Instance.new("Frame")
+local tabFrames = Instance.new("Frame")
+local tabListing = Instance.new("UIListLayout")
+local UIPadding_2 = Instance.new("UIPadding")
+local pages = Instance.new("Frame")
+local Pages = Instance.new("Folder")
+local infoContainer = Instance.new("Frame")
+local Close = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local UIScale = Instance.new("UIScale")
+local Settings = Instance.new("ImageButton")
+local Seperator = Instance.new("Frame")
+local ImageButton = Instance.new("ImageButton")
+local UIScale_2 = Instance.new("UIScale")
+local SettingFrame = Instance.new("Frame")
+local closeS = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIPadding_3 = Instance.new("UIPadding")
+local TabS = Instance.new("Frame")
+local TabSListLayout = Instance.new("UIListLayout")
+local Infotab = Instance.new("TextButton")
+local ScriptHub = Instance.new("TextButton")
+local mainSFrame = Instance.new("Frame")
+local Infoframe = Instance.new("Frame")
+local AntiAFK = Instance.new("TextButton")
+local Playername = Instance.new("TextButton")
+local PlaceID = Instance.new("TextButton")
+local GameName = Instance.new("TextButton")
+local PlaceName = Instance.new("TextButton")
+local SettingTips = Instance.new("TextButton")
+local ScriptHUb_2 = Instance.new("ScrollingFrame")
+local ScriptListLayout = Instance.new("UIListLayout")
+local Emptynesshub = Instance.new("TextButton")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local UIPadding_4 = Instance.new("UIPadding")
+local Simhub = Instance.new("TextButton")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+local UIPadding_5 = Instance.new("UIPadding")
 
-	--Properties:local blurFrame = Instance.new("Frame")
+--Properties:
 
-	Kavo:DraggingEnabled(MainHeader, Main)
-	
-	blurFrame.Name = "blurFrame"
-	blurFrame.Parent = pages
-	blurFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	blurFrame.BackgroundTransparency = 1
-	blurFrame.BorderSizePixel = 0
-	blurFrame.Position = UDim2.new(-0.0222222228, 0, -0.0371747203, 0)
-	blurFrame.Size = UDim2.new(0, 376, 0, 289)
-	blurFrame.ZIndex = 999
+ScriptHUb.Name = "ScriptHUb"
+ScriptHUb.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScriptHUb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	ScriptHUb.Name = "ScriptHUb"
-	ScriptHUb.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	ScriptHUb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.Name = "Main"
+Main.Parent = ScriptHUb
+Main.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.207291663, 0, 0.275485456, 0)
+Main.Size = UDim2.new(0, 525, 0, 318)
 
-	Main.Name = "Main"
-	Main.Parent = ScriptHUb
-	Main.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-	Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
-	Main.BorderSizePixel = 0
-	Main.Position = UDim2.new(0.207291663, 0, 0.275485456, 0)
-	Main.Size = UDim2.new(0, 525, 0, 318)
+MainCorner.CornerRadius = UDim.new(0, 4)
+MainCorner.Name = "MainCorner"
+MainCorner.Parent = Main
 
-	MainCorner.CornerRadius = UDim.new(0, 4)
-	MainCorner.Name = "MainCorner"
-	MainCorner.Parent = Main
+MainHeader.Name = "MainHeader"
+MainHeader.Parent = Main
+MainHeader.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainHeader.BackgroundTransparency = 1.000
+MainHeader.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainHeader.BorderSizePixel = 0
+MainHeader.Size = UDim2.new(0, 440, 0, 29)
 
-	MainHeader.Name = "MainHeader"
-	MainHeader.Parent = Main
-	MainHeader.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	MainHeader.BackgroundTransparency = 1.000
-	MainHeader.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	MainHeader.BorderSizePixel = 0
-	MainHeader.Size = UDim2.new(0, 440, 0, 29)
+headerCover.CornerRadius = UDim.new(0, 4)
+headerCover.Name = "headerCover"
+headerCover.Parent = MainHeader
 
-	headerCover.CornerRadius = UDim.new(0, 4)
-	headerCover.Name = "headerCover"
-	headerCover.Parent = MainHeader
+coverup.Name = "coverup"
+coverup.Parent = MainHeader
+coverup.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+coverup.BackgroundTransparency = 1.000
+coverup.BorderColor3 = Color3.fromRGB(0, 0, 0)
+coverup.BorderSizePixel = 0
+coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
+coverup.Size = UDim2.new(0, 525, 0, 7)
 
-	coverup.Name = "coverup"
-	coverup.Parent = MainHeader
-	coverup.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	coverup.BackgroundTransparency = 1.000
-	coverup.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	coverup.BorderSizePixel = 0
-	coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
-	coverup.Size = UDim2.new(0, 525, 0, 7)
+Title.Name = "Title"
+Title.Parent = MainHeader
+Title.Active = false
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0, 0, 0.344999999, 0)
+Title.Selectable = false
+Title.Size = UDim2.new(0, 204, 0, 8)
+Title.Font = Enum.Font.GothamMedium
+Title.Text = "Zen X's Library"
+Title.TextColor3 = Color3.fromRGB(161, 161, 161)
+Title.TextSize = 13.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
 
-	Title.Name = "Title"
-	Title.Parent = MainHeader
-	Title.Active = false
-	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Title.BackgroundTransparency = 1.000
-	Title.Position = UDim2.new(0, 0, 0.344999999, 0)
-	Title.Selectable = false
-	Title.Size = UDim2.new(0, 204, 0, 8)
-	Title.Font = Enum.Font.GothamMedium
-	Title.Text = kavName
-	Title.TextColor3 = Color3.fromRGB(161, 161, 161)
-	Title.TextSize = 13.000
-	Title.TextXAlignment = Enum.TextXAlignment.Left
+UIPadding.Parent = Title
+UIPadding.PaddingLeft = UDim.new(0, 10)
 
-	UIPadding.Parent = Title
-	UIPadding.PaddingLeft = UDim.new(0, 10)
+MainSide.Name = "MainSide"
+MainSide.Parent = Main
+MainSide.BackgroundColor3 = Color3.fromRGB(0, 10, 10)
+MainSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainSide.BorderSizePixel = 0
+MainSide.ClipsDescendants = true
+MainSide.Position = UDim2.new(0, 0, 0.11006289, 0)
+MainSide.Size = UDim2.new(0, 148, 0, 283)
 
-	MainSide.Name = "MainSide"
-	MainSide.Parent = Main
-	MainSide.BackgroundColor3 = Color3.fromRGB(0, 10, 10)
-	MainSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	MainSide.BorderSizePixel = 0
-	MainSide.ClipsDescendants = true
-	MainSide.Position = UDim2.new(0, 0, 0.11006289, 0)
-	MainSide.Size = UDim2.new(0, 148, 0, 283)
+sideCorner.CornerRadius = UDim.new(0, 4)
+sideCorner.Name = "sideCorner"
+sideCorner.Parent = MainSide
 
-	sideCorner.CornerRadius = UDim.new(0, 4)
-	sideCorner.Name = "sideCorner"
-	sideCorner.Parent = MainSide
+coverup_2.Name = "coverup_2"
+coverup_2.Parent = MainSide
+coverup_2.BackgroundColor3 = Color3.fromRGB(0, 5, 5)
+coverup_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+coverup_2.BorderSizePixel = 0
+coverup_2.Size = UDim2.new(0, 7, 0, 268)
 
-	coverup_2.Name = "coverup_2"
-	coverup_2.Parent = MainSide
-	coverup_2.BackgroundColor3 = Color3.fromRGB(0, 5, 5)
-	coverup_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	coverup_2.BorderSizePixel = 0
-	coverup_2.Size = UDim2.new(0, 7, 0, 268)
+tabFrames.Name = "tabFrames"
+tabFrames.Parent = MainSide
+tabFrames.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tabFrames.BackgroundTransparency = 1.000
+tabFrames.BorderColor3 = Color3.fromRGB(0, 0, 0)
+tabFrames.BorderSizePixel = 0
+tabFrames.Position = UDim2.new(0, 0, -0.000663700397, 0)
+tabFrames.Size = UDim2.new(0, 149, 0, 268)
 
-	tabFrames.Name = "tabFrames"
-	tabFrames.Parent = MainSide
-	tabFrames.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	tabFrames.BackgroundTransparency = 1.000
-	tabFrames.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	tabFrames.BorderSizePixel = 0
-	tabFrames.Position = UDim2.new(0, 0, -0.000663700397, 0)
-	tabFrames.Size = UDim2.new(0, 149, 0, 268)
+tabListing.Name = "tabListing"
+tabListing.Parent = tabFrames
+tabListing.SortOrder = Enum.SortOrder.LayoutOrder
 
-	tabListing.Name = "tabListing"
-	tabListing.Parent = tabFrames
-	tabListing.SortOrder = Enum.SortOrder.LayoutOrder
+UIPadding_2.Parent = tabFrames
+UIPadding_2.PaddingTop = UDim.new(0, 10)
 
-	UIPadding_2.Parent = tabFrames
-	UIPadding_2.PaddingTop = UDim.new(0, 10)
+pages.Name = "pages"
+pages.Parent = Main
+pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+pages.BackgroundTransparency = 1.000
+pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
+pages.BorderSizePixel = 0
+pages.Position = UDim2.new(0.295238107, 0, 0.11006289, 0)
+pages.Size = UDim2.new(0, 372, 0, 283)
 
-	pages.Name = "pages"
-	pages.Parent = Main
-	pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	pages.BackgroundTransparency = 1.000
-	pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	pages.BorderSizePixel = 0
-	pages.Position = UDim2.new(0.295238107, 0, 0.11006289, 0)
-	pages.Size = UDim2.new(0, 372, 0, 283)
+Pages.Name = "Pages"
+Pages.Parent = pages
 
-	Pages.Name = "Pages"
-	Pages.Parent = pages
+infoContainer.Name = "infoContainer"
+infoContainer.Parent = Main
+infoContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infoContainer.BackgroundTransparency = 1.000
+infoContainer.BorderColor3 = Color3.fromRGB(0, 42, 53)
+infoContainer.BorderSizePixel = 0
+infoContainer.Position = UDim2.new(0, 0, 0.874213815, 0)
+infoContainer.Size = UDim2.new(0, 368, 0, 33)
 
-	infoContainer.Name = "infoContainer"
-	infoContainer.Parent = Main
-	infoContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	infoContainer.BackgroundTransparency = 1.000
-	infoContainer.BorderColor3 = Color3.fromRGB(0, 42, 53)
-	infoContainer.BorderSizePixel = 0
-	infoContainer.Position = UDim2.new(0, 0, 0.874213815, 0)
-	infoContainer.Size = UDim2.new(0, 368, 0, 33)
-
-	Close.Name = "Close"
-	Close.Parent = Main
-	Close.Active = false
-	Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Close.BackgroundTransparency = 1.000
-	Close.Position = UDim2.new(0.913294256, 0, 0, 0)
-	Close.Selectable = false
-	Close.Size = UDim2.new(0, 35, 0, 22)
-	Close.MouseButton1Click:Connect(function()
+Close.Name = "Close"
+Close.Parent = Main
+Close.Active = false
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.913294256, 0, 0, 0)
+Close.Selectable = false
+Close.Size = UDim2.new(0, 35, 0, 22)
+Close.MouseButton1Click:Connect(function()
 		ScriptHUb:Destroy()
 game.StarterGui:SetCore("SendNotification", {
-Title = "Hidden",
-Text = "The Script succfully closed",
-Duration = 4,
-end)
-
-	UICorner.CornerRadius = UDim.new(0, 4)
-	UICorner.Parent = Close
-
-	ImageLabel.Parent = Close
-	ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageLabel.BackgroundTransparency = 1.000
-	ImageLabel.Position = UDim2.new(0.5, 1, 0.5, 0)
-	ImageLabel.Size = UDim2.new(0, 21, 0, 21)
-	ImageLabel.Image = "rbxassetid://7743878857"
-	ImageLabel.ImageColor3 = Color3.fromRGB(134, 134, 134)
-
-	UIScale.Parent = ImageLabel
-	UIScale.Scale = 0.700
-
-	Settings.Name = "Settings"
-	Settings.Parent = Main
-	Settings.Active = false
-	Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Settings.BackgroundTransparency = 1.000
-	Settings.Position = UDim2.new(0.831389487, 0, -0.000524268951, 0)
-	Settings.Selectable = false
-	Settings.Size = UDim2.new(0, 36, 0, 29)
-
-	Seperator.Name = "Seperator"
-	Seperator.Parent = Settings
-	Seperator.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-	Seperator.BorderSizePixel = 0
-	Seperator.Position = UDim2.new(-0.0101394504, 0, -0.027777778, 0)
-	Seperator.Size = UDim2.new(0, 1, 0, 36)
-
-	ImageButton.Parent = Settings
-	ImageButton.AnchorPoint = Vector2.new(0.5, 0.5)
-	ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageButton.BackgroundTransparency = 1.000
-	ImageButton.Position = UDim2.new(0.5, 1, 0.5, 0)
-	ImageButton.Size = UDim2.new(0, 20, 0, 20)
-	ImageButton.Image = "http://www.roblox.com/asset/?id=13816617362"
-	ImageButton.ImageColor3 = Color3.fromRGB(132, 132, 132)
-
-	UIScale_2.Parent = ImageButton
-	UIScale_2.Scale = 0.800
-
-	SettingFrame.Name = "Setting Frame"
-	SettingFrame.Parent = ScriptHUb
-	SettingFrame.BackgroundColor3 = Color3.fromRGB(0, 10, 10)
-	SettingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	SettingFrame.BorderSizePixel = 0
-	SettingFrame.Position = UDim2.new(0.380208343, 0, 0.377066135, 0)
-	SettingFrame.Size = UDim2.new(0, 427, 0, 282)
-
-	closeS.Name = "close S"
-	closeS.Parent = SettingFrame
-	closeS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	closeS.BackgroundTransparency = 1.000
-	closeS.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	closeS.BorderSizePixel = 0
-	closeS.Position = UDim2.new(0.916903555, 0, 0.00286367419, 0)
-	closeS.Size = UDim2.new(0, 35, 0, 27)
-	closeS.ZIndex = 5
-	closeS.Font = Enum.Font.SourceSans
-	closeS.Text = "X"
-	closeS.TextColor3 = Color3.fromRGB(255, 255, 255)
-	closeS.TextScaled = true
-	closeS.TextSize = 14.000
-	closeS.TextWrapped = true
-	closeS.MouseButton1Click:Connect(function()
-		SettingFrame.Visible = false
-game.StarterGui:SetCore("SendNotification", {
-Title = "Hidden",
-Text = "The Setting frame succfully closed",
+Title = "Distroyed",
+Text = "The Gui was Distroyed",
 Duration = 4,
 })
-end)
-
-	UICorner_2.Parent = SettingFrame
-
-	UIPadding_3.Parent = SettingFrame
-
-	TabS.Name = "Tab S"
-	TabS.Parent = SettingFrame
-	TabS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TabS.BackgroundTransparency = 1.000
-	TabS.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabS.BorderSizePixel = 0
-	TabS.Position = UDim2.new(0, 0, 0.00286367419, 0)
-	TabS.Size = UDim2.new(0, 128, 0, 281)
-
-	TabSListLayout.Name = "TabSListLayout"
-	TabSListLayout.Parent = TabS
-	TabSListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-	Infotab.Name = "Info tab"
-	Infotab.Parent = TabS
-	Infotab.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	Infotab.BackgroundTransparency = 1.000
-	Infotab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Infotab.BorderSizePixel = 0
-	Infotab.Position = UDim2.new(-0.858333349, 0, 0.138297871, 0)
-	Infotab.Size = UDim2.new(0, 135, 0, 28)
-	Infotab.AutoButtonColor = false
-	Infotab.Font = Enum.Font.SourceSans
-	Infotab.Text = "Info"
-	Infotab.TextColor3 = Color3.fromRGB(0, 255, 255)
-	Infotab.TextScaled = true
-	Infotab.TextSize = 14.000
-	Infotab.TextWrapped = true
-	
-	ScriptHub.Name = "Script Hub"
-	ScriptHub.Parent = TabS
-	ScriptHub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	ScriptHub.BackgroundTransparency = 1.000
-	ScriptHub.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ScriptHub.BorderSizePixel = 0
-	ScriptHub.Position = UDim2.new(-0.858333349, 0, 0.138297871, 0)
-	ScriptHub.Size = UDim2.new(0, 135, 0, 28)
-	ScriptHub.AutoButtonColor = false
-	ScriptHub.Font = Enum.Font.SourceSans
-	ScriptHub.Text = "Script Hub"
-	ScriptHub.TextColor3 = Color3.fromRGB(0, 255, 255)
-	ScriptHub.TextScaled = true
-	ScriptHub.TextSize = 14.000
-	ScriptHub.TextWrapped = true
-	
-	mainSFrame.Name = "mainSFrame"
-	mainSFrame.Parent = SettingFrame
-	mainSFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	mainSFrame.BackgroundTransparency = 1.000
-	mainSFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	mainSFrame.BorderSizePixel = 0
-	mainSFrame.Position = UDim2.new(0.316159248, 0, 0.0986083522, 0)
-	mainSFrame.Size = UDim2.new(0, 291, 0, 254)
-
-	Infoframe.Name = "Info frame"
-	Infoframe.Parent = mainSFrame
-	Infoframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Infoframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Infoframe.BorderSizePixel = 0
-	Infoframe.Size = UDim2.new(0, 291, 0, 254)
-	Infoframe.Visible = false
-
-	AntiAFK.Name = "Anti AFK"
-	AntiAFK.Parent = Infoframe
-	AntiAFK.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	AntiAFK.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AntiAFK.BorderSizePixel = 0
-	AntiAFK.Position = UDim2.new(0.024828095, 0, 0.63436085, 0)
-	AntiAFK.Size = UDim2.new(0, 283, 0, 28)
-	AntiAFK.AutoButtonColor = false
-	AntiAFK.Font = Enum.Font.SourceSans
-	AntiAFK.Text = "Anti AFK"
-	AntiAFK.TextColor3 = Color3.fromRGB(0, 255, 255)
-	AntiAFK.TextScaled = true
-	AntiAFK.TextSize = 14.000
-	AntiAFK.TextWrapped = true
-
-	Playername.Name = "Player name"
-	Playername.Parent = Infoframe
-	Playername.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	Playername.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Playername.BorderSizePixel = 0
-	Playername.Position = UDim2.new(0.000773111999, 0, -0.00343442895, 0)
-	Playername.Size = UDim2.new(0, 291, 0, 28)
-	Playername.AutoButtonColor = false
-	Playername.Font = Enum.Font.SourceSans
-	Playername.Text = "Player Name"..game.Players.LocalPlayer.Name
-	Playername.TextColor3 = Color3.fromRGB(0, 255, 255)
-	Playername.TextScaled = true
-	Playername.TextSize = 14.000
-	Playername.TextWrapped = true
-	Playername.MouseButton1Click:Connect(function()
-		game:GetService("StarterGui"):SetCore("SendNotification",{
-			Title = "Copied",
-			Text = "you have copied the PlayerName",
-			Duration = 4
-		})
-		wait(0.5)
-		setclipboard("ID: "..game.Players.LocalPlayer.Name)
 	end)
 
-	PlaceID.Name = "Place ID"
-	PlaceID.Parent = Infoframe
-	PlaceID.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	PlaceID.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PlaceID.BorderSizePixel = 0
-	PlaceID.Position = UDim2.new(0.000773111999, 0, 0.114675805, 0)
-	PlaceID.Size = UDim2.new(0, 291, 0, 28)
-	PlaceID.AutoButtonColor = false
-	PlaceID.Font = Enum.Font.SourceSans
-	PlaceID.Text = "Place ID"
-	PlaceID.TextColor3 = Color3.fromRGB(0, 255, 255)
-	PlaceID.TextScaled = true
-	PlaceID.TextSize = 14.000
-	PlaceID.TextWrapped = true
-	PlaceID.MouseButton1Click:Connect(function()
-		game:GetService("StarterGui"):SetCore("SendNotification",{
-			Title = "Copied",
-			Text = "you have copied the placeID",
-			Duration = 4
-		})
-		wait(0.5)
-		setclipboard("ID: "..game.PlaceId)
-	end)
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Close
 
-	GameName.Name = "Game Name"
-	GameName.Parent = Infoframe
-	GameName.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	GameName.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GameName.BorderSizePixel = 0
-	GameName.Position = UDim2.new(0.000773111999, 0, 0.268219113, 0)
-	GameName.Size = UDim2.new(0, 291, 0, 28)
-	GameName.AutoButtonColor = false
-	GameName.Font = Enum.Font.SourceSans
-	GameName.Text = "Game ID: "..game.GameId
-	GameName.TextColor3 = Color3.fromRGB(0, 255, 255)
-	GameName.TextScaled = true
-	GameName.TextSize = 14.000
-	GameName.TextWrapped = true
+ImageLabel.Parent = Close
+ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.5, 1, 0.5, 0)
+ImageLabel.Size = UDim2.new(0, 21, 0, 21)
+ImageLabel.Image = "rbxassetid://7743878857"
+ImageLabel.ImageColor3 = Color3.fromRGB(134, 134, 134)
 
-	PlaceName.Name = "Place Name"
-	PlaceName.Parent = Infoframe
-	PlaceName.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	PlaceName.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	PlaceName.BorderSizePixel = 0
-	PlaceName.Position = UDim2.new(0.000773111999, 0, 0.441447467, 0)
-	PlaceName.Size = UDim2.new(0, 291, 0, 28)
-	PlaceName.AutoButtonColor = false
-	PlaceName.Font = Enum.Font.SourceSans
-	PlaceName.Text = "Place Name"..game.Place.Name
-	PlaceName.TextColor3 = Color3.fromRGB(0, 255, 255)
-	PlaceName.TextScaled = true
-	PlaceName.TextSize = 14.000
-	PlaceName.TextWrapped = true
+UIScale.Parent = ImageLabel
+UIScale.Scale = 0.700
 
-	ScriptHUb_2.Name = "Script HUb"
-	ScriptHUb_2.Parent = mainSFrame
-	ScriptHUb_2.Active = true
-	ScriptHUb_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ScriptHUb_2.BackgroundTransparency = 1.000
-	ScriptHUb_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ScriptHUb_2.BorderSizePixel = 0
-	ScriptHUb_2.Size = UDim2.new(0, 291, 0, 254)
+Settings.Name = "Settings"
+Settings.Parent = Main
+Settings.Active = false
+Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Settings.BackgroundTransparency = 1.000
+Settings.Position = UDim2.new(0.831389487, 0, -0.000524268951, 0)
+Settings.Selectable = false
+Settings.Size = UDim2.new(0, 36, 0, 29)
 
-	ScriptListLayout.Name = "Script ListLayout"
-	ScriptListLayout.Parent = ScriptHUb_2
-	ScriptListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+Seperator.Name = "Seperator"
+Seperator.Parent = Settings
+Seperator.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Seperator.BorderSizePixel = 0
+Seperator.Position = UDim2.new(-0.0101394504, 0, -0.027777778, 0)
+Seperator.Size = UDim2.new(0, 1, 0, 36)
 
-	Emptynesshub.Name = "Emptyness hub"
-	Emptynesshub.Parent = ScriptHUb_2
-	Emptynesshub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	Emptynesshub.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Emptynesshub.BorderSizePixel = 0
-	Emptynesshub.Position = UDim2.new(0.024828095, 0, 0.63436085, 0)
-	Emptynesshub.Size = UDim2.new(0, 283, 0, 28)
-	Emptynesshub.AutoButtonColor = false
-	Emptynesshub.Font = Enum.Font.SourceSans
-	Emptynesshub.Text = "Emptyness hub"
-	Emptynesshub.TextColor3 = Color3.fromRGB(0, 255, 255)
-	Emptynesshub.TextScaled = true
-	Emptynesshub.TextSize = 14.000
-	Emptynesshub.TextWrapped = true
-	Emptynesshub.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/3caDghrg"))();
+ImageButton.Parent = Settings
+ImageButton.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(0.5, 1, 0.5, 0)
+ImageButton.Size = UDim2.new(0, 20, 0, 20)
+ImageButton.Image = "http://www.roblox.com/asset/?id=13816617362"
+ImageButton.ImageColor3 = Color3.fromRGB(132, 132, 132)
+
+UIScale_2.Parent = ImageButton
+UIScale_2.Scale = 0.800
+
+SettingFrame.Name = "Setting Frame"
+SettingFrame.Parent = ScriptHUb
+SettingFrame.BackgroundColor3 = Color3.fromRGB(0, 10, 10)
+SettingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SettingFrame.BorderSizePixel = 0
+SettingFrame.Position = UDim2.new(0.380208343, 0, 0.377066135, 0)
+SettingFrame.Size = UDim2.new(0, 427, 0, 282)
+
+closeS.Name = "close S"
+closeS.Parent = SettingFrame
+closeS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+closeS.BackgroundTransparency = 1.000
+closeS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+closeS.BorderSizePixel = 0
+closeS.Position = UDim2.new(0.916903555, 0, 0.00286367419, 0)
+closeS.Size = UDim2.new(0, 35, 0, 27)
+closeS.ZIndex = 5
+closeS.Font = Enum.Font.SourceSans
+closeS.Text = "X"
+closeS.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeS.TextScaled = true
+closeS.TextSize = 14.000
+closeS.TextWrapped = true
+closeS.MouseButton1Click:Connect(function()
+		SettingFrame:Destroy()
 game.StarterGui:SetCore("SendNotification", {
-Title = "Loaded",
-Text = "The Emptyness Hub have successfully loaded",
+Title = "Distroyed",
+Text = "The SettingFrame Gui was Distroyed",
 Duration = 4,
 })
-end)
-
-	UITextSizeConstraint.Parent = Emptynesshub
-	UITextSizeConstraint.MinTextSize = 5
-
-	UIPadding_4.Parent = Emptynesshub
-
-	Simhub.Name = "Sim - hub"
-	Simhub.Parent = ScriptHUb_2
-	Simhub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
-	Simhub.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Simhub.BorderSizePixel = 0
-	Simhub.Position = UDim2.new(0.0412371121, 0, 0.295275599, 0)
-	Simhub.Size = UDim2.new(0, 283, 0, 28)
-	Simhub.AutoButtonColor = false
-	Simhub.Font = Enum.Font.SourceSans
-	Simhub.Text = "Sim - hub"
-	Simhub.TextColor3 = Color3.fromRGB(0, 255, 255)
-	Simhub.TextScaled = true
-	Simhub.TextSize = 14.000
-	Simhub.TextWrapped = true
-	Simhub.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/E1Kp2r3Y"))();
-game.StarterGui:SetCore("SendNotification", {
-Title = "Loaded",
-Text = "The Sim Hub have successfully loaded",
-Duration = 4,
 	end)
 
-	UITextSizeConstraint_2.Parent = Simhub
-	UITextSizeConstraint_2.MinTextSize = 5
+UICorner_2.Parent = SettingFrame
 
-	UIPadding_5.Parent = Simhub
+UIPadding_3.Parent = SettingFrame
 
-	-- Scripts:
+TabS.Name = "Tab S"
+TabS.Parent = SettingFrame
+TabS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TabS.BackgroundTransparency = 1.000
+TabS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TabS.BorderSizePixel = 0
+TabS.Position = UDim2.new(0, 0, 0.00286367419, 0)
+TabS.Size = UDim2.new(0, 128, 0, 281)
 
-	local function WMMW_fake_script() -- ImageButton.LocalScript 
-		local script = Instance.new('LocalScript', ImageButton)
+TabSListLayout.Name = "TabSListLayout"
+TabSListLayout.Parent = TabS
+TabSListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-		script.Parent.MouseButton1Click:Connect (function()
-			script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
-		end)
-	end
-	coroutine.wrap(WMMW_fake_script)()
-	local function WCPZP_fake_script() -- Settings.LocalScript 
-		local script = Instance.new('LocalScript', Settings)
+Infotab.Name = "Info tab"
+Infotab.Parent = TabS
+Infotab.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+Infotab.BackgroundTransparency = 1.000
+Infotab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Infotab.BorderSizePixel = 0
+Infotab.Position = UDim2.new(-0.858333349, 0, 0.138297871, 0)
+Infotab.Size = UDim2.new(0, 135, 0, 28)
+Infotab.AutoButtonColor = false
+Infotab.Font = Enum.Font.SourceSans
+Infotab.Text = "Info"
+Infotab.TextColor3 = Color3.fromRGB(0, 255, 255)
+Infotab.TextScaled = true
+Infotab.TextSize = 14.000
+Infotab.TextWrapped = true
 
-		script.Parent.MouseButton1Click:Connect (function()
-			script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
-		end)
-	end
-	coroutine.wrap(WCPZP_fake_script)()
-	local function DSJIZ_fake_script() -- closeS.Close S local 
-		local script = Instance.new('LocalScript', closeS)
+ScriptHub.Name = "Script Hub"
+ScriptHub.Parent = TabS
+ScriptHub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+ScriptHub.BackgroundTransparency = 1.000
+ScriptHub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptHub.BorderSizePixel = 0
+ScriptHub.Position = UDim2.new(-0.858333349, 0, 0.138297871, 0)
+ScriptHub.Size = UDim2.new(0, 135, 0, 28)
+ScriptHub.AutoButtonColor = false
+ScriptHub.Font = Enum.Font.SourceSans
+ScriptHub.Text = "Script Hub"
+ScriptHub.TextColor3 = Color3.fromRGB(0, 255, 255)
+ScriptHub.TextScaled = true
+ScriptHub.TextSize = 14.000
+ScriptHub.TextWrapped = true
 
-		script.Parent.MouseButton1Click:Connect (function()
-			script.Parent.Parent.Parent["Setting Frame"].Visible = false
-		end)
-	end
-	coroutine.wrap(DSJIZ_fake_script)()
-	local function MZGJ_fake_script() -- Infotab.LocalScript 
-		local script = Instance.new('LocalScript', Infotab)
+mainSFrame.Name = "mainSFrame"
+mainSFrame.Parent = SettingFrame
+mainSFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mainSFrame.BackgroundTransparency = 1.000
+mainSFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+mainSFrame.BorderSizePixel = 0
+mainSFrame.Position = UDim2.new(0.316159248, 0, 0.0986083522, 0)
+mainSFrame.Size = UDim2.new(0, 291, 0, 254)
 
-		script.Parent.MouseButton1Click:Connect (function()
-			script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible = not script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible 
-		end)
-	end
-	coroutine.wrap(MZGJ_fake_script)()
-	local function GFIEZR_fake_script() -- ScriptHub.LocalScript 
-		local script = Instance.new('LocalScript', ScriptHub)
+Infoframe.Name = "Info frame"
+Infoframe.Parent = mainSFrame
+Infoframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Infoframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Infoframe.BorderSizePixel = 0
+Infoframe.Size = UDim2.new(0, 291, 0, 254)
 
-		script.Parent.MouseButton1Click:Connect (function()
-			script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible = not script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible
-		end)
-	end
-	coroutine.wrap(GFIEZR_fake_script)()
+AntiAFK.Name = "Anti AFK"
+AntiAFK.Parent = Infoframe
+AntiAFK.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+AntiAFK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AntiAFK.BorderSizePixel = 0
+AntiAFK.Position = UDim2.new(0.024828095, 0, 0.63436085, 0)
+AntiAFK.Size = UDim2.new(0, 283, 0, 28)
+AntiAFK.AutoButtonColor = false
+AntiAFK.Font = Enum.Font.SourceSans
+AntiAFK.Text = "Anti AFK"
+AntiAFK.TextColor3 = Color3.fromRGB(0, 255, 255)
+AntiAFK.TextScaled = true
+AntiAFK.TextSize = 14.000
+AntiAFK.TextWrapped = true
+
+Playername.Name = "Player name"
+Playername.Parent = Infoframe
+Playername.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+Playername.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Playername.BorderSizePixel = 0
+Playername.Position = UDim2.new(0.000773111999, 0, -0.00343442895, 0)
+Playername.Size = UDim2.new(0, 291, 0, 28)
+Playername.AutoButtonColor = false
+Playername.Font = Enum.Font.SourceSans
+Playername.Text = "Player Name"..game.Players.LocalPlayer.Name
+Playername.TextColor3 = Color3.fromRGB(0, 255, 255)
+Playername.TextScaled = true
+Playername.TextSize = 14.000
+Playername.TextWrapped = true
+
+PlaceID.Name = "Place ID"
+PlaceID.Parent = Infoframe
+PlaceID.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+PlaceID.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlaceID.BorderSizePixel = 0
+PlaceID.Position = UDim2.new(0.000773111999, 0, 0.114675805, 0)
+PlaceID.Size = UDim2.new(0, 291, 0, 28)
+PlaceID.AutoButtonColor = false
+PlaceID.Font = Enum.Font.SourceSans
+PlaceID.Text = "Place ID"..game.PlaceId
+PlaceID.TextColor3 = Color3.fromRGB(0, 255, 255)
+PlaceID.TextScaled = true
+PlaceID.TextSize = 14.000
+PlaceID.TextWrapped = true
+PlaceId.MouseButton1Click:Connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Copied",
+		Text = "you have copied the placeID",
+		Duration = 4
+	})
+	wait(0.5)
+	setclipboard("PLaceID: "..game.PlaceId)
+end)
+
+GameName.Name = "Game Name"
+GameName.Parent = Infoframe
+GameName.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+GameName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GameName.BorderSizePixel = 0
+GameName.Position = UDim2.new(0.000773111999, 0, 0.268219113, 0)
+GameName.Size = UDim2.new(0, 291, 0, 28)
+GameName.AutoButtonColor = false
+GameName.Font = Enum.Font.SourceSans
+GameName.Text = "Game Name"
+GameName.TextColor3 = Color3.fromRGB(0, 255, 255)
+GameName.TextScaled = true
+GameName.TextSize = 14.000
+GameName.TextWrapped = true
+
+PlaceName.Name = "Place Name"
+PlaceName.Parent = Infoframe
+PlaceName.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+PlaceName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlaceName.BorderSizePixel = 0
+PlaceName.Position = UDim2.new(0.000773111999, 0, 0.441447467, 0)
+PlaceName.Size = UDim2.new(0, 291, 0, 28)
+PlaceName.AutoButtonColor = false
+PlaceName.Font = Enum.Font.SourceSans
+PlaceName.Text = "Place Name"
+PlaceName.TextColor3 = Color3.fromRGB(0, 255, 255)
+PlaceName.TextScaled = true
+PlaceName.TextSize = 14.000
+PlaceName.TextWrapped = true
+
+SettingTips.Name = "Setting Tips"
+SettingTips.Parent = Infoframe
+SettingTips.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+SettingTips.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SettingTips.BorderSizePixel = 0
+SettingTips.Position = UDim2.new(0.014518816, 0, 0.799715161, 0)
+SettingTips.Size = UDim2.new(0, 283, 0, 28)
+SettingTips.AutoButtonColor = false
+SettingTips.Font = Enum.Font.SourceSans
+SettingTips.Text = "Tips: Click on them to copy them"
+SettingTips.TextColor3 = Color3.fromRGB(0, 255, 255)
+SettingTips.TextScaled = true
+SettingTips.TextSize = 14.000
+SettingTips.TextWrapped = true
+
+ScriptHUb_2.Name = "Script HUb"
+ScriptHUb_2.Parent = mainSFrame
+ScriptHUb_2.Active = true
+ScriptHUb_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptHUb_2.BackgroundTransparency = 1.000
+ScriptHUb_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptHUb_2.BorderSizePixel = 0
+ScriptHUb_2.Size = UDim2.new(0, 291, 0, 254)
+ScriptHUb_2.Visible = false
+
+ScriptListLayout.Name = "Script ListLayout"
+ScriptListLayout.Parent = ScriptHUb_2
+ScriptListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+Emptynesshub.Name = "Emptyness hub"
+Emptynesshub.Parent = ScriptHUb_2
+Emptynesshub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+Emptynesshub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Emptynesshub.BorderSizePixel = 0
+Emptynesshub.Position = UDim2.new(0.024828095, 0, 0.63436085, 0)
+Emptynesshub.Size = UDim2.new(0, 283, 0, 28)
+Emptynesshub.AutoButtonColor = false
+Emptynesshub.Font = Enum.Font.SourceSans
+Emptynesshub.Text = "Emptyness hub"
+Emptynesshub.TextColor3 = Color3.fromRGB(0, 255, 255)
+Emptynesshub.TextScaled = true
+Emptynesshub.TextSize = 14.000
+Emptynesshub.TextWrapped = true
+
+UITextSizeConstraint.Parent = Emptynesshub
+UITextSizeConstraint.MinTextSize = 5
+
+UIPadding_4.Parent = Emptynesshub
+
+Simhub.Name = "Sim - hub"
+Simhub.Parent = ScriptHUb_2
+Simhub.BackgroundColor3 = Color3.fromRGB(0, 27, 27)
+Simhub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Simhub.BorderSizePixel = 0
+Simhub.Position = UDim2.new(0.0412371121, 0, 0.295275599, 0)
+Simhub.Size = UDim2.new(0, 283, 0, 28)
+Simhub.AutoButtonColor = false
+Simhub.Font = Enum.Font.SourceSans
+Simhub.Text = "Sim - hub"
+Simhub.TextColor3 = Color3.fromRGB(0, 255, 255)
+Simhub.TextScaled = true
+Simhub.TextSize = 14.000
+Simhub.TextWrapped = true
+
+UITextSizeConstraint_2.Parent = Simhub
+UITextSizeConstraint_2.MinTextSize = 5
+
+UIPadding_5.Parent = Simhub
+
+-- Scripts:
+
+local function WMMW_fake_script() -- ImageButton.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton)
+
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
+	end)
+end
+coroutine.wrap(WMMW_fake_script)()
+local function WCPZP_fake_script() -- Settings.LocalScript 
+	local script = Instance.new('LocalScript', Settings)
+
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
+	end)
+end
+coroutine.wrap(WCPZP_fake_script)()
+local function DSJIZ_fake_script() -- closeS.Close S local 
+	local script = Instance.new('LocalScript', closeS)
+
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Parent["Setting Frame"].Visible = false
+	end)
+end
+coroutine.wrap(DSJIZ_fake_script)()
+local function MZGJ_fake_script() -- Infotab.LocalScript 
+	local script = Instance.new('LocalScript', Infotab)
+
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible = not script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible 
+	end)
+end
+coroutine.wrap(MZGJ_fake_script)()
+local function GFIEZR_fake_script() -- ScriptHub.LocalScript 
+	local script = Instance.new('LocalScript', ScriptHub)
+
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible = not script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible
+	end)
+end
+coroutine.wrap(GFIEZR_fake_script)()
 
 	local Tabs = {}
 
