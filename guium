@@ -248,8 +248,11 @@ function Kavo.CreateLib(kavName)
 	Close.Size = UDim2.new(0, 35, 0, 22)
 	Close.MouseButton1Click:Connect(function()
 		ScriptHUb:Destroy()
-		Kavo:Newnotify("Closed" , "The Script succfully closed", 4)
-	end)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Hidden",
+Text = "The Script succfully closed",
+Duration = 4,
+end)
 
 	UICorner.CornerRadius = UDim.new(0, 4)
 	UICorner.Parent = Close
@@ -319,8 +322,13 @@ function Kavo.CreateLib(kavName)
 	closeS.TextWrapped = true
 	closeS.MouseButton1Click:Connect(function()
 		SettingFrame.Visible = false
-		Kavo:Newnotify("Hidden" , "The Setting frame succfully closed", 4)
-	end)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Hidden",
+Text = "The Setting frame succfully closed",
+Duration = 4,
+})
+end)
+
 	UICorner_2.Parent = SettingFrame
 
 	UIPadding_3.Parent = SettingFrame
@@ -376,11 +384,9 @@ Infoframe.Visible = false
 	ScriptHub.TextWrapped = true
 	ScriptHub.MouseButton1Click:Connect(function()
 		ScriptHUb_2.Visible = true
-		if ScriptHUb_2.Visible == true then
-			ScriptHUb_2.Visible = false
-		else
-			ScriptHUb_2.Visible = true
-		end
+else
+		ScriptHUb_2.Visible = false
+		
 	end)
 	
 	mainSFrame.Name = "mainSFrame"
@@ -522,8 +528,12 @@ Infoframe.Visible = false
 	Emptynesshub.TextWrapped = true
 	Emptynesshub.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/3caDghrg"))();
-		Kavo:Newnotify("Loaded" , "The Emptyness Hub have successfully closed", 4)
-	end)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Loaded",
+Text = "The Emptyness Hub have successfully loaded",
+Duration = 4,
+})
+end)
 
 	UITextSizeConstraint.Parent = Emptynesshub
 	UITextSizeConstraint.MinTextSize = 5
@@ -547,6 +557,10 @@ Infoframe.Visible = false
 	Simhub.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/E1Kp2r3Y"))();
 		Kavo:Newnotify("Loaded" , "Sim Hub have successfully closed", 4)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Loaded",
+Text = "The Sim Hub have successfully loaded",
+Duration = 4,
 	end)
 
 	UITextSizeConstraint_2.Parent = Simhub
