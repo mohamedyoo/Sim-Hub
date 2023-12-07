@@ -303,6 +303,7 @@ closeS.TextScaled = true
 closeS.TextSize = 14.000
 closeS.TextWrapped = true
 
+
 UICorner_2.Parent = SettingFrame
 
 UIPadding_3.Parent = SettingFrame
@@ -413,6 +414,15 @@ PlaceID.TextColor3 = Color3.fromRGB(0, 255, 255)
 PlaceID.TextScaled = true
 PlaceID.TextSize = 14.000
 PlaceID.TextWrapped = true
+PlaceID.MouseButton1Click:Connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Copied",
+		Text = "you have copied the placeID",
+		Duration = 4
+	})
+	wait(0.5)
+	setclipboard("ID: "..game.PlaceId)
+end)
 
 GameName.Name = "Game Name"
 GameName.Parent = Infoframe
@@ -423,7 +433,7 @@ GameName.Position = UDim2.new(0.000773111999, 0, 0.268219113, 0)
 GameName.Size = UDim2.new(0, 291, 0, 28)
 GameName.AutoButtonColor = false
 GameName.Font = Enum.Font.SourceSans
-GameName.Text = "Game Name"
+GameName.Text = "Game Name: "..game.GameName
 GameName.TextColor3 = Color3.fromRGB(0, 255, 255)
 GameName.TextScaled = true
 GameName.TextSize = 14.000
@@ -438,7 +448,7 @@ PlaceName.Position = UDim2.new(0.000773111999, 0, 0.441447467, 0)
 PlaceName.Size = UDim2.new(0, 291, 0, 28)
 PlaceName.AutoButtonColor = false
 PlaceName.Font = Enum.Font.SourceSans
-PlaceName.Text = "Place Name"
+PlaceName.Text = "Place Name"..game.PlaceName
 PlaceName.TextColor3 = Color3.fromRGB(0, 255, 255)
 PlaceName.TextScaled = true
 PlaceName.TextSize = 14.000
