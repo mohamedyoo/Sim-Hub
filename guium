@@ -556,7 +556,6 @@ end)
 	Simhub.TextWrapped = true
 	Simhub.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/E1Kp2r3Y"))();
-		Kavo:Newnotify("Loaded" , "Sim Hub have successfully closed", 4)
 game.StarterGui:SetCore("SendNotification", {
 Title = "Loaded",
 Text = "The Sim Hub have successfully loaded",
