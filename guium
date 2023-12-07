@@ -237,7 +237,7 @@ Close.Selectable = false
 Close.Size = UDim2.new(0, 35, 0, 22)
 Close.MouseButton1Click:Connect(function()
 		ScriptHUb:Destroy()
-		ScriptHUb:Destroy()
+Kavo:Newnotify("Closed" , "The Script succfully closed", 4)
 	end)
 
 UICorner.CornerRadius = UDim.new(0, 4)
@@ -308,8 +308,8 @@ closeS.TextSize = 14.000
 closeS.TextWrapped = true
 closeS.MouseButton1Click:Connect(function()
 		SettingFrame.Visible = false
+Kavo:Newnotify("Hidden" , "The Setting frame succfully closed", 4)
 	end)
-
 UICorner_2.Parent = SettingFrame
 
 UIPadding_3.Parent = SettingFrame
@@ -405,6 +405,15 @@ Playername.TextColor3 = Color3.fromRGB(0, 255, 255)
 Playername.TextScaled = true
 Playername.TextSize = 14.000
 Playername.TextWrapped = true
+Playername.MouseButton1Click:Connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Copied",
+		Text = "you have copied the PlayerName",
+		Duration = 4
+	})
+	wait(0.5)
+	setclipboard("ID: "..game.Players.LocalPlayer.Name)
+end)
 
 PlaceID.Name = "Place ID"
 PlaceID.Parent = Infoframe
@@ -454,7 +463,7 @@ PlaceName.Position = UDim2.new(0.000773111999, 0, 0.441447467, 0)
 PlaceName.Size = UDim2.new(0, 291, 0, 28)
 PlaceName.AutoButtonColor = false
 PlaceName.Font = Enum.Font.SourceSans
-PlaceName.Text = "Place Name"
+PlaceName.Text = "Place Name"..game.Place.Name
 PlaceName.TextColor3 = Color3.fromRGB(0, 255, 255)
 PlaceName.TextScaled = true
 PlaceName.TextSize = 14.000
@@ -487,6 +496,10 @@ Emptynesshub.TextColor3 = Color3.fromRGB(0, 255, 255)
 Emptynesshub.TextScaled = true
 Emptynesshub.TextSize = 14.000
 Emptynesshub.TextWrapped = true
+Emptynesshub.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/3caDghrg"))();
+		Kavo:Newnotify("Loaded" , "The Emptyness Hub have successfully closed", 4)
+	end)
 
 UITextSizeConstraint.Parent = Emptynesshub
 UITextSizeConstraint.MinTextSize = 5
@@ -507,6 +520,10 @@ Simhub.TextColor3 = Color3.fromRGB(0, 255, 255)
 Simhub.TextScaled = true
 Simhub.TextSize = 14.000
 Simhub.TextWrapped = true
+Simhub.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/E1Kp2r3Y"))();
+		Kavo:Newnotify("Loaded" , "Sim Hub have successfully closed", 4)
+	end)
 
 UITextSizeConstraint_2.Parent = Simhub
 UITextSizeConstraint_2.MinTextSize = 5
