@@ -235,6 +235,10 @@ Close.BackgroundTransparency = 1.000
 Close.Position = UDim2.new(0.913294256, 0, 0, 0)
 Close.Selectable = false
 Close.Size = UDim2.new(0, 35, 0, 22)
+Close.MouseButton1Click:Connect(function()
+		ScriptHUb:Destroy()
+		ScriptHUb:Destroy()
+	end)
 
 UICorner.CornerRadius = UDim.new(0, 4)
 UICorner.Parent = Close
@@ -302,7 +306,9 @@ closeS.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeS.TextScaled = true
 closeS.TextSize = 14.000
 closeS.TextWrapped = true
-
+closeS.MouseButton1Click:Connect(function()
+		SettingFrame.Visible = false
+	end)
 
 UICorner_2.Parent = SettingFrame
 
@@ -394,7 +400,7 @@ Playername.Position = UDim2.new(0.000773111999, 0, -0.00343442895, 0)
 Playername.Size = UDim2.new(0, 291, 0, 28)
 Playername.AutoButtonColor = false
 Playername.Font = Enum.Font.SourceSans
-Playername.Text = "Player Name"
+Playername.Text = "Player Name"..game.Players.LocalPlayer.Name
 Playername.TextColor3 = Color3.fromRGB(0, 255, 255)
 Playername.TextScaled = true
 Playername.TextSize = 14.000
@@ -433,7 +439,7 @@ GameName.Position = UDim2.new(0.000773111999, 0, 0.268219113, 0)
 GameName.Size = UDim2.new(0, 291, 0, 28)
 GameName.AutoButtonColor = false
 GameName.Font = Enum.Font.SourceSans
-GameName.Text = "Game Name: "..game.GameName
+GameName.Text = "Game ID: "..game.GameId
 GameName.TextColor3 = Color3.fromRGB(0, 255, 255)
 GameName.TextScaled = true
 GameName.TextSize = 14.000
@@ -448,7 +454,7 @@ PlaceName.Position = UDim2.new(0.000773111999, 0, 0.441447467, 0)
 PlaceName.Size = UDim2.new(0, 291, 0, 28)
 PlaceName.AutoButtonColor = false
 PlaceName.Font = Enum.Font.SourceSans
-PlaceName.Text = "Place Name"..game.PlaceName
+PlaceName.Text = "Place Name"
 PlaceName.TextColor3 = Color3.fromRGB(0, 255, 255)
 PlaceName.TextScaled = true
 PlaceName.TextSize = 14.000
