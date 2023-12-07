@@ -361,11 +361,6 @@ end)
 	Infotab.TextScaled = true
 	Infotab.TextSize = 14.000
 	Infotab.TextWrapped = true
-	Infotab.MouseButton1Click:Connect(function()
-		Infoframe.Visible = true
-		else
-Infoframe.Visible = false
-	end)
 	
 	ScriptHub.Name = "Script Hub"
 	ScriptHub.Parent = TabS
@@ -382,12 +377,6 @@ Infoframe.Visible = false
 	ScriptHub.TextScaled = true
 	ScriptHub.TextSize = 14.000
 	ScriptHub.TextWrapped = true
-	ScriptHub.MouseButton1Click:Connect(function()
-		ScriptHUb_2.Visible = true
-else
-		ScriptHUb_2.Visible = false
-		
-	end)
 	
 	mainSFrame.Name = "mainSFrame"
 	mainSFrame.Parent = SettingFrame
@@ -566,6 +555,49 @@ Duration = 4,
 	UITextSizeConstraint_2.MinTextSize = 5
 
 	UIPadding_5.Parent = Simhub
+
+	-- Scripts:
+
+	local function WMMW_fake_script() -- ImageButton.LocalScript 
+		local script = Instance.new('LocalScript', ImageButton)
+
+		script.Parent.MouseButton1Click:Connect (function()
+			script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
+		end)
+	end
+	coroutine.wrap(WMMW_fake_script)()
+	local function WCPZP_fake_script() -- Settings.LocalScript 
+		local script = Instance.new('LocalScript', Settings)
+
+		script.Parent.MouseButton1Click:Connect (function()
+			script.Parent.Parent.Parent["Setting Frame"].Visible = not script.Parent.Parent.Parent["Setting Frame"].Visible
+		end)
+	end
+	coroutine.wrap(WCPZP_fake_script)()
+	local function DSJIZ_fake_script() -- closeS.Close S local 
+		local script = Instance.new('LocalScript', closeS)
+
+		script.Parent.MouseButton1Click:Connect (function()
+			script.Parent.Parent.Parent["Setting Frame"].Visible = false
+		end)
+	end
+	coroutine.wrap(DSJIZ_fake_script)()
+	local function MZGJ_fake_script() -- Infotab.LocalScript 
+		local script = Instance.new('LocalScript', Infotab)
+
+		script.Parent.MouseButton1Click:Connect (function()
+			script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible = not script.Parent.Parent.Parent.mainSFrame["Info frame"].Visible 
+		end)
+	end
+	coroutine.wrap(MZGJ_fake_script)()
+	local function GFIEZR_fake_script() -- ScriptHub.LocalScript 
+		local script = Instance.new('LocalScript', ScriptHub)
+
+		script.Parent.MouseButton1Click:Connect (function()
+			script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible = not script.Parent.Parent.Parent.mainSFrame["Script HUb"].Visible
+		end)
+	end
+	coroutine.wrap(GFIEZR_fake_script)()
 
 	local Tabs = {}
 
