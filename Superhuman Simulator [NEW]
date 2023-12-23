@@ -212,19 +212,15 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
   end
    end)
         
-        Section:NewToggle("Auto Attack NPC", "ToggleInfo", function(v)
-          getgenv().ANPC = v
-		if v then
-        ANPC()
-            end
+        Section:NewToggle("Auto Attack NPC", "ToggleInfo", ANPC, function(c)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("Npcs")[c].CFrame
 end)
 
-function ANPC()
-	while getgenv().ANPC == true do wait(.2)
-		for i,v in pairs (game:GetService("Workspace").Npcs:GetDescendants()) do
-      if v:IsA("Folder") or v:IsA("Model") then
-				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
-			end
-		end
-	end
+local ANPC = {}
+    for _,v in pairs(workspace.Npcs:GetChildren()) do
+if v:IsA('Part') or v:IsA("Model") or v:IsA("HumanoidRootPart") then
+        if not table.find(ANPC, v.Name) then
+       table.insert(ANPC, v.Name)
+        end
+    end
 end
