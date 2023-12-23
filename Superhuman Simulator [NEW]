@@ -8,6 +8,46 @@ function ANPC()
 	end
 end
 
+ local EndName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Endurance:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(EndName, v.Name) then
+       table.insert(EndName, v.Name)
+        end
+    end
+end
+
+
+
+ local strName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Strength:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(strName, v.Name) then
+       table.insert(strName, v.Name)
+        end
+    end
+end
+
+
+ local psyName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Psychic:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(psyName, v.Name) then
+       table.insert(psyName, v.Name)
+        end
+    end
+end
+
+
+local agName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Speed:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(agName, v.Name) then
+       table.insert(agName, v.Name)
+        end
+    end
+end
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
 
 local Window = Library.CreateLib("Superhuman Simulator [NEW]", "Sentinel")
@@ -162,7 +202,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
   end
    end)
         
-        MainSection:NewToggle("Auto Attack NPC", "ToggleInfo", function(bool)
+        Section:NewToggle("Auto Attack NPC", "ToggleInfo", function(bool)
           getgenv().ANPC = bool
 		if bool then
         ANPC()
@@ -170,58 +210,20 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
 end)
 
 
-      local EndName = {}
-    for _,v in pairs(workspace:WaitForChild("TrainingZones").Endurance:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(EndName, v.Name) then
-       table.insert(EndName, v.Name)
-        end
-    end
-end
-
-
          ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Endurance[c].CFrame
     end)
-
-            local strName = {}
-    for _,v in pairs(workspace:WaitForChild("TrainingZones").Strength:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(strName, v.Name) then
-       table.insert(strName, v.Name)
-        end
-    end
-end
 
 
          ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Strength[c].CFrame
     end)
 
-           local psyName = {}
-    for _,v in pairs(workspace:WaitForChild("TrainingZones").Psychic:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(psyName, v.Name) then
-       table.insert(psyName, v.Name)
-        end
-    end
-end
-
-
          ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Psychic[c].CFrame
     end)
 
-            local agName = {}
-    for _,v in pairs(workspace:WaitForChild("TrainingZones").Speed:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(agName, v.Name) then
-       table.insert(agName, v.Name)
-        end
-    end
-end
 
-
-         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Speed[c].CFrame
     end)
