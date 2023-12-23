@@ -1,0 +1,227 @@
+function ANPC()
+	while getgenv().ANPC == true do wait(.2)
+		for i,v in pairs (game:GetService("Workspace").Npcs:GetDescendants()) do
+      if v:IsA("Folder") or v:IsA("Model") then
+				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
+			end
+		end
+	end
+end
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
+
+local Window = Library.CreateLib("Superhuman Simulator [NEW]", "Sentinel")
+
+local Main = Window:NewTab("auto farm")
+
+local Upgrade = Window:NewTab("auto Upgrade")
+
+local Teleport = Window:NewTab("Teleports")
+
+local Section = Main:NewSection("Main")
+
+local UPSection = Upgrade:NewSection("Select")
+
+local ZoneS = Teleport:NewSection("training Zone")
+
+ Section:NewKeybind("Toggle UI", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+Section:NewToggle("auto Strength", "", function(v)
+    getgenv().Strength = v
+      while getgenv().Strength == true do
+local args = {
+    [1] = "Train",
+    [2] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+   Section:NewToggle("auto Endurance", "", function(v)
+    getgenv().Endurance = v
+      while getgenv().Endurance == true do
+local args = {
+    [1] = "Train",
+    [2] = "Endurance"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+    Section:NewToggle("auto Psychic", "", function(v)
+    getgenv().Psychic = v
+      while getgenv().Psychic == true do
+local args = {
+    [1] = "Train",
+    [2] = "Psychic"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+    Section:NewToggle("auto Agility", "", function(v)
+    getgenv().Agility = v
+      while getgenv().Agility == true do
+local args = {
+    [1] = "Train Speed"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+        Section:NewToggle("auto Realm Up", "", function(v)
+    getgenv().Rank = v
+      while getgenv().Rank == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "Realm"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+
+        UPSection:NewToggle("auto Fusion Up", "", function(v)
+          getgenv().Fusion = v
+      while getgenv().Fusion == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "Fusion"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+--upgrade
+
+        UPSection:NewToggle("upgrade strength", "", function(v)
+          getgenv().strMui = v
+      while getgenv().strMui == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "StrMultiplier"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+
+        UPSection:NewToggle("upgrade Endurence", "", function(v)
+          getgenv().EndMui = v
+      while getgenv().EndMui == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "EndMultiplier"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+        UPSection:NewToggle("upgrade Psychic", "", function(v)
+          getgenv().Psymui = v
+      while getgenv().Psymui == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "PsyMultiplier"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+          UPSection:NewToggle("upgrade Agility", "", function(v)
+            getgenv().AgMuil = v
+      while getgenv().AgMuil == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "SpdMultiplier"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+        
+        MainSection:NewToggle("Auto Attack NPC", "ToggleInfo", function(bool)
+          getgenv().ANPC = bool
+		if bool then
+        ANPC()
+            end
+end)
+
+
+      local EndName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Endurance:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(EndName, v.Name) then
+       table.insert(EndName, v.Name)
+        end
+    end
+end
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Endurance[c].CFrame
+    end)
+
+            local strName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Strength:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(strName, v.Name) then
+       table.insert(strName, v.Name)
+        end
+    end
+end
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Strength[c].CFrame
+    end)
+
+           local psyName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Psychic:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(psyName, v.Name) then
+       table.insert(psyName, v.Name)
+        end
+    end
+end
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Psychic[c].CFrame
+    end)
+
+            local agName = {}
+    for _,v in pairs(workspace:WaitForChild("TrainingZones").Speed:GetChildren()) do
+      if v:IsA('Folder') or v:IsA("TrainingZone") then
+        if not table.find(agName, v.Name) then
+       table.insert(agName, v.Name)
+        end
+    end
+end
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Speed[c].CFrame
+    end)
