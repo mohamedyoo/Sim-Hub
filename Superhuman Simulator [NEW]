@@ -68,6 +68,24 @@ local ZoneS = Teleport:NewSection("training Zone")
 	Library:ToggleUI()
 end)
 
+       ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Endurance[c].CFrame
+    end)
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Strength[c].CFrame
+    end)
+
+         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Psychic[c].CFrame
+    end)
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Speed[c].CFrame
+    end)
+
 Section:NewToggle("auto Strength", "", function(v)
     getgenv().Strength = v
       while getgenv().Strength == true do
@@ -208,22 +226,3 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
         ANPC()
             end
 end)
-
-
-         ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Endurance[c].CFrame
-    end)
-
-
-         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Strength[c].CFrame
-    end)
-
-         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Psychic[c].CFrame
-    end)
-
-
-         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("TrainingZones").Speed[c].CFrame
-    end)
