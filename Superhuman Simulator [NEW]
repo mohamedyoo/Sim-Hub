@@ -211,16 +211,3 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
   game:GetService("RunService").Heartbeat:wait();
   end
    end)
-        
-        Section:NewToggle("Auto Attack NPC", "ToggleInfo", ANPC, function(c)
-         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace"):WaitForChild("Npcs")[c].CFrame
-end)
-
-local ANPC = {}
-    for _,v in pairs(workspace.Npcs:GetChildren()) do
-if v:IsA('Part') or v:IsA("Model") or v:IsA("HumanoidRootPart") then
-        if not table.find(ANPC, v.Name) then
-       table.insert(ANPC, v.Name)
-        end
-    end
-end
