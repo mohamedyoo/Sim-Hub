@@ -13,7 +13,7 @@ end
     for _,v in pairs(workspace.TrainingZones.Strength:GetChildren()) do
     if v.ClassName == "Folder" or  v.ClassName == "Part" then
         if v:FindFirstChild("TrainingZone") then
-            table.insert(EndName, v.Name)
+            table.insert(strName, v.Name)
         end
     end
 end
@@ -24,7 +24,7 @@ end
     for _,v in pairs(workspace:WaitForChild("TrainingZones").Psychic:GetChildren()) do
        if v.ClassName == "Folder" or  v.ClassName == "Part" then
         if v:FindFirstChild("TrainingZone") then
-            table.insert(EndName, v.Name)
+            table.insert(psyName, v.Name)
         end
     end
 end
