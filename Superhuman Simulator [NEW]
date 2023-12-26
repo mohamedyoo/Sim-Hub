@@ -1,9 +1,13 @@
 
 
  local EndName = {}
-        for _,v in pairs(game:GetService("Workspace").TrainingZones.Endurance:GetChildren()) do
+    for _,v in pairs(workspace:GetChildren()) do
+    if v.ClassName == "Folder" or v.ClassName == "TrainingZone" then
+        if v:FindFirstChild("Active") then
             table.insert(EndName, v.Name)
         end
+    end
+end
 
 
 
@@ -56,8 +60,8 @@ local ZoneS = Teleport:NewSection("training Zone")
 	Library:ToggleUI()
 end)
 
-       ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(selected) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").TrainingZones[selected].Endurance.Position)
+       ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Endurance:FindFirstChild(Sele):FindFirstChild("Active").Position)
     end)
 
 
