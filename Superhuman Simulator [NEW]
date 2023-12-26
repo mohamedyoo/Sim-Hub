@@ -64,14 +64,14 @@ end)
     end)
 
 
-         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Strength:FindFirstChild(Sele):FindFirstChild("TrainingZone").Position)
     end)
-         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Psychic:FindFirstChild(Sele):FindFirstChild("TrainingZone").Position)
     end)
 
-         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(c) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Speed:FindFirstChild(Sele):FindFirstChild("TrainingZone").Position)
     end)
 
