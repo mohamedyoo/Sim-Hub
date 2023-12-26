@@ -2,7 +2,7 @@
 
  local EndName = {}
     for _,v in pairs(workspace.TrainingZones.Endurance:GetChildren()) do
-    if v.ClassName == "Folder" then
+    if v.ClassName == "Folder" or  v.ClassName == "Part" then
         if v:FindFirstChild("TrainingZone") then
             table.insert(EndName, v.Name)
         end
