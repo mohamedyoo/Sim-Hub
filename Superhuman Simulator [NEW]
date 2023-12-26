@@ -2,7 +2,7 @@
 
  local EndName = {}
         for _,v in pairs(game:GetService("Workspace").TrainingZones.Endurance:GetChildren()) do
-            table.insert(IslandNames, v.Name)
+            table.insert(EndName, v.Name)
         end
 
 
