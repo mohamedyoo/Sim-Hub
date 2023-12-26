@@ -1,6 +1,6 @@
 function ChestToken()
 	while getgenv().ChestToken == true do wait(.2)
-		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Token:GetDescendants()) do
+		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Token:GetChildren()) do
 			if v:IsA("Part") or v:IsA("Spawner") then
 				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
 			end
@@ -8,9 +8,11 @@ function ChestToken()
 	end
 end
 
+--GetDescendants
+
 function ChestGems()
 	while getgenv().ChestGems == true do wait(.2)
-		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Gem:GetDescendants()) do
+		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Gem:GetChildren()) do
 			if v:IsA("Part") or v:IsA("Spawner") then
 				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
 			end
