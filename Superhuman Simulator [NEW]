@@ -1,4 +1,22 @@
+function ChestToken()
+	while getgenv().ChestToken == true do wait(.2)
+		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Token:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Spawner") then
+				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
+			end
+		end
+	end
+end
 
+function ChestGems()
+	while getgenv().ChestGems == true do wait(.2)
+		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Gem:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Spawner") then
+				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
+			end
+		end
+	end
+end
 
  local EndName = {}
     for _,v in pairs(workspace.TrainingZones.Endurance:GetChildren()) do
@@ -160,7 +178,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
    end)
 
 
-        UPSection:NewToggle("auto Fusion Up", "", function(v)
+        Section:NewToggle("auto Fusion Up", "", function(v)
           getgenv().Fusion = v
       while getgenv().Fusion == true do
 local args = {
@@ -173,6 +191,19 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(ar
   end
    end)
 
+Section:NewToggle("Auto grab Chest token", "ToggleInfo", function(bool)
+    getgenv().ChestToken = bool
+		if bool then
+        ChestToken()
+            end
+end)
+
+Section:NewToggle("Auto grab Chest Gems", "ToggleInfo", function(bool)
+    getgenv().ChestGems = bool
+		if bool then
+        ChestGems()
+            end
+end)
 --upgrade
 
         UPSection:NewToggle("upgrade strength", "", function(v)
