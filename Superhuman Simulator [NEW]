@@ -9,23 +9,22 @@
     end
 end
 
-
-
  local strName = {}
-    for _,v in pairs(workspace:WaitForChild("TrainingZones").Strength:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(strName, v.Name) then
-       table.insert(strName, v.Name)
+    for _,v in pairs(workspace.TrainingZones.Strength:GetChildren()) do
+    if v.ClassName == "Folder" or  v.ClassName == "Part" then
+        if v:FindFirstChild("TrainingZone") then
+            table.insert(EndName, v.Name)
         end
     end
 end
 
 
+
  local psyName = {}
     for _,v in pairs(workspace:WaitForChild("TrainingZones").Psychic:GetChildren()) do
-      if v:IsA('Folder') or v:IsA("TrainingZone") then
-        if not table.find(psyName, v.Name) then
-       table.insert(psyName, v.Name)
+       if v.ClassName == "Folder" or  v.ClassName == "Part" then
+        if v:FindFirstChild("TrainingZone") then
+            table.insert(EndName, v.Name)
         end
     end
 end
