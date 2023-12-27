@@ -61,7 +61,7 @@ end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
 
-local Window = Library.CreateLib("Superhuman Simulator [NEW]", "Sentinel")
+local Window = Library.CreateLib("Superhuman Simulator [NEW]", "Midnight")
 
 local Main = Window:NewTab("auto farm")
 
