@@ -261,3 +261,26 @@ until Server
  
 TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
 end)
+
+ Section:NewToggle("Auto Spin draw", " ", function(v)
+    getgenv().Draw  = v
+      while getgenv().Draw == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("DailyDraw"):WaitForChild("RemoteFunction"):InvokeServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+Section:NewToggle("Auto claim draw free", "free draw", function(v)
+    getgenv().CDraw  = v
+      while getgenv().CDraw == true do
+local args = {
+    [1] = "Daily Draw",
+    [2] = "Free",
+[3] = game.Players.LocalPlayer
+
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
