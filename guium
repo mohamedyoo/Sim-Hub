@@ -55,9 +55,8 @@ function Library:Drag(obj)
 		end
 	end)
 end
-local soundo = Instance.new("Sound")
 
-soundo:play()
+local soundo = Instance.new("Sound")
 
 function Library:Create(xHubName,xGameName)
 	local xHubName = xHubName or "UI Library"
