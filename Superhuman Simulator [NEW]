@@ -49,6 +49,15 @@ end
     end
 end
 
+local NPCName = {}
+    for _,v in pairs(workspace.Npcs:GetChildren()) do
+       if v.ClassName == "Model" or  v.ClassName == "Part" then
+        if v:FindFirstChild("HumanoidRootPart") then
+            table.insert(NPCName, v.Name)
+        end
+    end
+end
+
 
 local agName = {}
     for _,v in pairs(workspace:WaitForChild("TrainingZones").Speed:GetChildren()) do
@@ -90,8 +99,12 @@ end)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Psychic:FindFirstChild(Sele):FindFirstChild("TrainingZone").Position)
     end)
 
-         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", psyName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+         ZoneS:NewDropdown("Teleport to training zone 'Speed' ", "Speed ONLY!!", agName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.TrainingZones.Speed:FindFirstChild(Sele):FindFirstChild("TrainingZone").Position)
+    end)
+
+ZoneS:NewDropdown("Teleport to NPCs", "NPCs ONLY!!", NPCName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Npcs:FindFirstChild(Sele):FindFirstChild("HumanoidRootPart").Position)
     end)
 
 Section:NewToggle("auto Strength", "", function(v)
