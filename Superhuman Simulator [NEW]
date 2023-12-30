@@ -1,7 +1,7 @@
 function ChestToken()
 	while getgenv().ChestToken == true do wait(.2)
 		for i,v in pairs (game:GetService("Workspace").ChestSpawns.Token:GetChildren()) do
-			if v:IsA("Part") or v:IsA("TokenChest") then
+			if v:IsA("Part") or v:IsA("TokenChest") or v:IsA("Model") then
 				game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
 			end
 		end
