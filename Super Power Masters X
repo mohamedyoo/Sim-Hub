@@ -62,13 +62,22 @@ ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", 
     end)
 
 
- Section:NewToggle("Auto strength ", "kinda slow", function(v)
-    getgenv().Draw  = v
-      while getgenv().Draw == true do
-game:GetService("Players").LocalPlayer.Character.Strength.stab:FireServer()
+ Section:NewToggle("Auto Rank up ", " ", function(v)
+    getgenv().Rank = v
+      while getgenv().Rank == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Rank"):FireServer()
 game:GetService("RunService").Heartbeat:wait();
   end
    end)
+
+ Section:NewToggle("Auto Evo up ", " ", function(v)
+    getgenv().Evo = v
+      while getgenv().Evo == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Evolution"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
 
 
 
