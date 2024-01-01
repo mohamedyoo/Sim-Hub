@@ -41,7 +41,7 @@ local Teleport = Window:NewTab("Teleports")
 
 local Section = Main:NewSection("Main")
 
-local UPSection = Upgrade:NewSection("Select")
+local UpS = Upgrade:NewSection("Select")
 
 local ZoneS = Teleport:NewSection("training Zone")
 
@@ -84,6 +84,29 @@ Library:Newnotify("Active" , "The anit afk was actived", 4)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind", true))()
 end)
 
+UpS:NewToggle("auto upgrade endurence", "Make your player auto click", function(v)
+    getgenv().Uend = v
+      while getgenv().Uend == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Body"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+ 
+UpS:NewToggle("auto upgrade strength", "Make your player auto click", function(v)
+    getgenv().Ustr = v
+      while getgenv().Ustr == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Strength"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+ 
+UpS:NewToggle("auto upgrade speed", "Make your player auto click", function(v)
+    getgenv().USp = v
+      while getgenv().USp == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Speed"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
 
 Section:NewButton("Join lowest server", "ButtonInfo", function()
 local Http = game:GetService("HttpService")
