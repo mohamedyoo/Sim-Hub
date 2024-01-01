@@ -108,6 +108,21 @@ game:GetService("RunService").Heartbeat:wait();
   end
    end)
 
+
+Section:NewToggle("auto egg 1", "Make your player auto click", function(v)
+    getgenv().UC1 = v
+      while getgenv().UC1 == true do
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Runes"):WaitForChild("Rune1"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+
+
 Section:NewButton("Join lowest server", "ButtonInfo", function()
 local Http = game:GetService("HttpService")
 local TPS = game:GetService("TeleportService")
