@@ -1,0 +1,89 @@
+
+ local EndName = {}
+    for _,v in pairs(workspace.Areas.Body:GetChildren()) do
+    if v.ClassName == "Folder" or  v.ClassName == "Model" then
+        if v:FindFirstChild("Main") then
+            table.insert(EndName, v.Name)
+        end
+    end
+end
+
+ local strName = {}
+    for _,v in pairs(workspace.Areas.Strength:GetChildren()) do
+    if v.ClassName == "Folder" or  v.ClassName == "Model" then
+        if v:FindFirstChild("Main") then
+            table.insert(strName, v.Name)
+        end
+    end
+end
+
+
+
+ local psyName = {}
+    for _,v in pairs(workspace:WaitForChild("Areas").Psychic:GetChildren()) do
+       if v.ClassName == "Folder" or  v.ClassName == "Model" then
+        if v:FindFirstChild("Main") then
+            table.insert(psyName, v.Name)
+        end
+    end
+end
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
+
+local Window = Library.CreateLib("Super Power Masters X", "Midnight")
+
+local Main = Window:NewTab("auto farm")
+
+local Upgrade = Window:NewTab("auto Upgrade")
+
+local Teleport = Window:NewTab("Teleports")
+
+local Section = Main:NewSection("Main")
+
+local UPSection = Upgrade:NewSection("Select")
+
+local ZoneS = Teleport:NewSection("training Zone")
+
+ Section:NewKeybind("Toggle UI", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", EndName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Areas.Body:FindFirstChild(Sele):FindFirstChild("Main").Position)
+    end)
+
+
+         ZoneS:NewDropdown("Teleport to training zone 'Strength' ", "Strength ONLY!!", strName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Areas.Strength:FindFirstChild(Sele):FindFirstChild("Main").Position)
+    end)
+         ZoneS:NewDropdown("Teleport to training zone 'Psychic' ", "Psychic ONLY!!", psyName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Areas.Psychic:FindFirstChild(Sele):FindFirstChild("Main").Position)
+    end)
+
+
+
+
+
+
+
+Section:NewButton("Join lowest server", "ButtonInfo", function()
+local Http = game:GetService("HttpService")
+local TPS = game:GetService("TeleportService")
+local Api = "https://games.roblox.com/v1/games/"
+ 
+local _place = game.PlaceId
+local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+function ListServers(cursor)
+   local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+   return Http:JSONDecode(Raw)
+end
+ 
+local Server, Next; repeat
+   local Servers = ListServers(Next)
+   Server = Servers.data[1]
+   Next = Servers.nextPageCursor
+until Server
+ 
+TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+end)
