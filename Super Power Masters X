@@ -62,7 +62,13 @@ ZoneS:NewDropdown("Teleport to training zone 'Endurance' ", "Endurance ONLY!!", 
     end)
 
 
-
+ Section:NewToggle("Auto strength ", "kinda slow", function(v)
+    getgenv().Draw  = v
+      while getgenv().Draw == true do
+game:GetService("Players").LocalPlayer.Character.Strength.stab:FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
 
 
 
