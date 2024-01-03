@@ -272,7 +272,6 @@ close.TextWrapped = true
 	close.MouseButton1Click:Connect(function()
 		Scriptmapp:Destroy()
 		print("Script was distroyed")
-		soundC:Play()
 	end)	
 	
 MainCorner.Name = "MainCorner"
