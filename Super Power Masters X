@@ -121,6 +121,18 @@ game:GetService("RunService").Heartbeat:wait();
   end
    end)
 
+Section:NewToggle("auto egg 1 sec", "Make your player auto click", function(v)
+    getgenv().S1 = v
+      while getgenv().S1 == true do
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Runes"):WaitForChild("SecretRune"):FireServer()
+game:GetService("RunService").Heartbeat:wait();
+  end
+   end) 
+
 Section:NewToggle("auto egg 1 secerte", "Make your player auto click", function(v)
     getgenv().Se1 = v
       while getgenv().Se1 == true do 
