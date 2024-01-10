@@ -108,6 +108,13 @@ game:GetService("RunService").Heartbeat:wait();
   end
    end)
 
+Section:NewButton("rune 1 ", "ButtonInfo", function()
+ local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Runes"):WaitForChild("Rune1"):FireServer()
+end)
 
 Section:NewToggle("auto egg 1", "Make your player auto click", function(v)
     getgenv().E1 = v
