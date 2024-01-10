@@ -116,8 +116,7 @@ Section:NewToggle("auto egg 1", "Make your player auto click", function(v)
     getgenv().E1 = v
       while getgenv().E1 == true do
 local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = false
+    [1] = false
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Runes"):WaitForChild("Rune1"):FireServer(unpack(args))
