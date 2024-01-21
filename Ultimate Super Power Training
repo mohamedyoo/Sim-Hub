@@ -156,3 +156,15 @@ ZoneS:NewButton("Update Dropdown", "Refreshes Dropdown", function()
             end
         end
 end)
+
+
+
+
+
+--main ends
+
+ Section:NewButton("Die", "Make your player auto click", function()
+  pcall(function()   
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end)
+end)
