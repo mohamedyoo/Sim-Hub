@@ -1,0 +1,148 @@
+ local zoneName = {}
+    for _,v in pairs(workspace.world.zones.grind_zone:GetChildren()) do
+    if v.ClassName == "Folder" or v.ClassName == "Model" or v.ClassName == "Part" then
+        if v:FindFirstChild("Hitbox") then
+            table.insert(zoneName , v.Name)
+        end
+    end
+end
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
+
+local Window = Library.CreateLib("Ultimate Super Power Training", "Midnight")
+
+local Main = Window:NewTab("auto farm")
+
+local Upgrade = Window:NewTab("auto Upgrade")
+
+local Teleport = Window:NewTab("Teleports")
+
+--section
+local Section = Main:NewSection("Main")
+
+local UPSection = Upgrade:NewSection("Select")
+
+local ZoneS = Teleport:NewSection("training Zone")
+
+
+--stuffs
+ Section:NewKeybind("Toggle UI", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+Section:NewToggle("auto Strength", "", function(v)
+    getgenv().Strength = v
+      while getgenv().Strength == true do
+local args = {
+    [1] = "Click",
+    [2] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Tool"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+   Section:NewToggle("auto Endurance", "", function(v)
+    getgenv().Endurance = v
+      while getgenv().Endurance == true do
+local args = {
+    [1] = "Click",
+    [2] = "Endurance"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Tool"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+   
+    Section:NewToggle("auto Psychic", "", function(v)
+    getgenv().Psychic = v
+      while getgenv().Psychic == true do
+local args = {
+    [1] = "set_psychic_mode"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Tool"):FireServer(unpack(args))
+
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+Section:NewToggle("auto Realm Up", "", function(v)
+    getgenv().Rank = v
+      while getgenv().Rank == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "Realm"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+
+        Section:NewToggle("auto Fusion Up", "", function(v)
+          getgenv().Fusion = v
+      while getgenv().Fusion == true do
+local args = {
+    [1] = "Upgrade",
+    [2] = "Fusion"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+ Section:NewToggle("auto Quest Up", "", function(v)
+          getgenv().Quest = v
+      while getgenv().Quest == true do
+local args = {
+    [1] = "collect_main"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Quests"):FireServer(unpack(args))
+  game:GetService("RunService").Heartbeat:wait();
+  end
+   end)
+
+Section:NewButton("Join lowest server", "ButtonInfo", function()
+local Http = game:GetService("HttpService")
+local TPS = game:GetService("TeleportService")
+local Api = "https://games.roblox.com/v1/games/"
+ 
+local _place = game.PlaceId
+local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+function ListServers(cursor)
+   local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+   return Http:JSONDecode(Raw)
+end
+ 
+local Server, Next; repeat
+   local Servers = ListServers(Next)
+   Server = Servers.data[1]
+   Next = Servers.nextPageCursor
+until Server
+ 
+TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+end)
+
+
+
+
+
+--upgrades
+
+
+
+
+--teleport
+
+  ZoneS:NewDropdown("Teleport to training zone ", "All taining zone ONLY!!", zoneName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.world.zones.grind_zone:FindFirstChild(Sele):FindFirstChild("Hitbox").Position)
+    end)
