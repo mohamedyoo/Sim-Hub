@@ -76,11 +76,10 @@ Section:NewToggle("auto Realm Up", "", function(v)
     getgenv().Rank = v
       while getgenv().Rank == true do
 local args = {
-    [1] = "Upgrade",
-    [2] = "Realm"
+    [1] = "rank_up"
 }
 
-game:GetService("ReplicatedStorage"):WaitForChild("Remote"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Rank"):FireServer(unpack(args))
   game:GetService("RunService").Heartbeat:wait();
   end
    end)
