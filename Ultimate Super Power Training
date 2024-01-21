@@ -9,7 +9,6 @@ end
 
 
 
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mohamedyoo/owlhub/main/New%20ui"))()
 
 local Window = Library.CreateLib("Ultimate Super Power Training", "Midnight")
@@ -142,6 +141,10 @@ end)
 
 --teleport
 
-  ZoneS:NewDropdown("Teleport to training zone ", "All taining zone ONLY!!", zoneName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
+local dropdown = ZoneS:NewDropdown("Teleport to training zone ", "All taining zone ONLY!!", zoneName, function(Sele) -- drop down for multiple options that go under the same catagory, ex. Aimbone (Head, UpperTorso, Legs)
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.world.zones.grind_zone:FindFirstChild(Sele):FindFirstChild("Hitbox").Position)
     end)
+
+Section:NewButton("Update Dropdown", "Refreshes Dropdown", function()
+  dropdown:Refresh()
+end)
