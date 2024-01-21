@@ -145,6 +145,14 @@ local dropdown = ZoneS:NewDropdown("Teleport to training zone ", "All taining zo
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.world.zones.grind_zone:FindFirstChild(Sele):FindFirstChild("Hitbox").Position)
     end)
 
-Section:NewButton("Update Dropdown", "Refreshes Dropdown", function()
-  dropdown:Refresh()
+ZoneS:NewButton("Update Dropdown", "Refreshes Dropdown", function()
+ dropdown:Clear()
+        for i,v in pairs(workspace.world.zones.grind_zone:GetChildren()) do
+            if v:IsA"Hitbox" then
+                dropdown:UpdateList({
+                    Items = {v.Name},
+                    Replace = true
+                })
+            end
+        end
 end)
